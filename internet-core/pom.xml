@@ -2,11 +2,7 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.d7kj.cms</groupId>
-	<artifactId>internet-parent</artifactId>
+	<artifactId>internet-core</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<!-- 模块依赖 -->
-	<modules>
-		<module>../internet-core</module>
-	</modules>
+	<!--<packaging>jar</packaging>-->
 </project>
