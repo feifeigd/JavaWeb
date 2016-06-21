@@ -20,9 +20,7 @@ public class InitServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = -8310721741142136774L;
 	
-	private static WebApplicationContext wc;
-
-	
+	private static WebApplicationContext wc;	
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
@@ -37,8 +35,6 @@ public class InitServlet extends HttpServlet {
 		sc.setAttribute("baseInfo", BaseInfoUtil.getInstance().read());
 		System.out.println("--- 系统初始化成功: "+ auths + "---");
 	}
-
-
 
 	public static WebApplicationContext getWc(){
 		return wc;
