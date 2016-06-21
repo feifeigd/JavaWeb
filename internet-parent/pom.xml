@@ -13,7 +13,7 @@
 	<!-- 公共信息配置 -->
 	<properties>
 		<project.build.sourceEncodeing>UTF-8</project.build.sourceEncodeing>
-		<spring.version>3.2.2.RELEASE</spring.version>
+		<spring.version>4.3.0.RELEASE</spring.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
