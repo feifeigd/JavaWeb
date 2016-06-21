@@ -30,6 +30,14 @@
 				<version>${spring.version}</version>
 				<scope>test</scope>
 			</dependency>
+			
+			<!-- 模块 -->
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>internet-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
 			<!-- 添加spring依赖包 -->
 			<dependency>
 				<groupId>org.springframework</groupId>

@@ -34,7 +34,7 @@ public class InitServlet extends HttpServlet {
 		// 初始化权限信息
 		Map<String, Set<String> > auths = AuthUtil.initAuth("com.initernet.cms.controller");
 		sc.setAttribute("allAuths", auths);
-		//sc.setAttribute("baseInfo", BaseInfoUtil.getInstance().read());
+		sc.setAttribute("baseInfo", BaseInfoUtil.getInstance().read());
 		System.out.println("--- 系统初始化成功: "+ auths + "---");
 	}
 
