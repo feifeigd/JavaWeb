@@ -8,9 +8,11 @@
 	<!-- 模块依赖 -->
 	<modules>
 		<module>../internet-core</module>
+		<module>../internet-admin</module>
 	</modules>
 	<!-- 公共信息配置 -->
 	<properties>
+		<project.build.sourceEncodeing>UTF-8</project.build.sourceEncodeing>
 		<spring.version>3.2.2.RELEASE</spring.version>
 	</properties>
 	<dependencyManagement>
@@ -85,6 +87,13 @@
 				<groupId>org.apache.activemq</groupId>
 				<artifactId>activemq-core</artifactId>
 				<version>5.7.0</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+				<scope>provided</scope>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
