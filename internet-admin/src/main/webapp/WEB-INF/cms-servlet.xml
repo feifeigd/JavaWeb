@@ -9,5 +9,29 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
 		http://www.directwebremoting.org/schema/spring-dwr http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd">
 	
+	<!-- 默认的注解映射的支持 -->
+	<mvc:annotation-driven />
+	
+	<!-- 拦截器权限配置 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/admin/**"/>
+			<bean class="com.internet.cms.web.AuthInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- 自动扫描的包名 -->
+	<!--  扫描指定的包中的类上的注解，常用的注解有：
+		@Controller 声明Action组件
+		@Service    声明Service组件    @Service("myMovieLister")
+		@Repository 声明Dao组件
+		@Component   泛指组件, 当不好归类时.
+		@RequestMapping("/menu")  请求映射
+		@Resource  用于注入，( j2ee提供的 ) 默认按名称装配，@Resource(name="beanName")
+		@Autowired 用于注入，(srping提供的) 默认按类型装配
+		@Transactional( rollbackFor={Exception.class}) 事务管理
+		@ResponseBody
+		@Scope("prototype")   设定bean的作用域
+	 -->
 	<context:component-scan base-package="com.internet.cms.controller" />
 </beans>

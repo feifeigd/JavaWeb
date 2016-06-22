@@ -1,0 +1,20 @@
+package com.internet.cms.model;
+
+public class CmsException extends RuntimeException {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6138716038314465156L;
+
+	public CmsException(String message, Throwable cause){
+		super(message, cause);
+	}
+	
+	public CmsException(String message){
+		super(message);
+	}
+	public CmsException(Throwable cause){
+		super(cause);
+	}
+}
