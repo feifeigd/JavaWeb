@@ -8,6 +8,9 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+
+import com.internet.cms.page.SystemContext;
 
 public class SystemContextFilter implements Filter {
 
@@ -23,18 +26,25 @@ public class SystemContextFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
-		// TODO Auto-generated method stub
 		Integer offset = 0;
 		try{
 			offset = Integer.parseInt(request.getParameter("pager.offset"));
 		}catch(NumberFormatException e){}
 		
 		try{
-			//SystemContext.
+			SystemContext.setOrder(request.getParameter("order"));
+			SystemContext.setSort(request.getParameter("sort"));
+			SystemContext.setPageOffset(offset);
+			SystemContext.setPageSize(pageSize);
+			SystemContext.setRealPath(((HttpServletRequest)request).getSession().getServletContext().getRealPath("/"));
+			chain.doFilter(request, response);
 		}finally{
-			
-		}
-		
+			SystemContext.removeOrder();
+			SystemContext.removeSort();
+			SystemContext.removePageOffset();
+			SystemContext.removePageSize();
+			SystemContext.removeRealPath();
+		}		
 	}
 	
 	public void destroy() {

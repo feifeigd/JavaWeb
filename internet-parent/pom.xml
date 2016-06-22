@@ -9,6 +9,7 @@
 	<modules>
 		<module>../internet-core</module>
 		<module>../internet-admin</module>
+		<module>../internet-common</module>
 	</modules>
 	<!-- 公共信息配置 -->
 	<properties>
@@ -32,6 +33,11 @@
 			</dependency>
 			
 			<!-- 模块 -->
+			<dependency>
+				<groupId>com.internet.cms.basic</groupId>
+				<artifactId>internet-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>${project.groupId}</groupId>
 				<artifactId>internet-core</artifactId>

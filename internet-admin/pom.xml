@@ -32,6 +32,10 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>internet-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.internet.cms.basic</groupId>
+			<artifactId>internet-common</artifactId>
+		</dependency>
 			<dependency>
              	<groupId>com.alibaba</groupId>
              	<artifactId>druid</artifactId>
