@@ -10,7 +10,12 @@
 
 	<artifactId>internet-admin</artifactId>
 	<packaging>war</packaging>
+	<name>internet-admin</name>
 	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -27,5 +32,9 @@
 			<groupId>${project.groupId}</groupId>
 			<artifactId>internet-core</artifactId>
 		</dependency>
+			<dependency>
+             	<groupId>com.alibaba</groupId>
+             	<artifactId>druid</artifactId>
+         	</dependency>
 	</dependencies>
 </project>

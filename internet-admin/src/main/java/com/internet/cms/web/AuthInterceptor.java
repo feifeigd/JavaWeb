@@ -14,6 +14,8 @@ import com.internet.cms.model.User;
 
 public class AuthInterceptor extends HandlerInterceptorAdapter {
 
+	/// Action之前执行,可以进行编码、安全控制等处理
+	/// @param handler 下一个拦截器
 	@SuppressWarnings("unchecked")
 	@Override
 	public boolean preHandle(HttpServletRequest request,

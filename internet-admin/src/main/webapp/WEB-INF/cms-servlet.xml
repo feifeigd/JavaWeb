@@ -12,6 +12,8 @@
 	<!-- 默认的注解映射的支持 -->
 	<mvc:annotation-driven />
 	
+	<mvc:resources location="/resources/" mapping="/resources/**"/>
+	
 	<!-- 拦截器权限配置 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
@@ -20,11 +22,11 @@
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
-	<!-- 自动扫描的包名 -->
+	<!-- 自动扫描的包名，告诉框架那些类是使用注解的。 -->
 	<!--  扫描指定的包中的类上的注解，常用的注解有：
-		@Controller 声明Action组件
-		@Service    声明Service组件    @Service("myMovieLister")
-		@Repository 声明Dao组件
+		@Controller 控制层：声明Action组件
+		@Service    服务层：声明Service组件    @Service("myMovieLister")
+		@Repository 持久层： 声明Dao组件
 		@Component   泛指组件, 当不好归类时.
 		@RequestMapping("/menu")  请求映射
 		@Resource  用于注入，( j2ee提供的 ) 默认按名称装配，@Resource(name="beanName")
@@ -34,4 +36,5 @@
 		@Scope("prototype")   设定bean的作用域
 	 -->
 	<context:component-scan base-package="com.internet.cms.controller" />
+
 </beans>
