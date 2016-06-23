@@ -4,9 +4,16 @@
 <html>
 <head>
 <jsp:include page="../common/common_login.jsp"></jsp:include>
-
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/admin/login.css" />
 </head>
 <body>
-login page...
+	<div class="center">
+		<h1>
+			<i class="ace-icon fa fa-lefa green"></i>
+			<span class="red">d7kj</span>
+			<span class="white" id="id-text2">d7kj</span>
+		</h1>
+		<h4 class="blue" id="id-company-text">&copy;d7kj</h4>
+	</div>
 </body>
 </html>
