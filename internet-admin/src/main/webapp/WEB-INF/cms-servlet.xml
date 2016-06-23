@@ -36,9 +36,36 @@
 		@Scope("prototype")   设定bean的作用域
 	 -->
 	<context:component-scan base-package="com.internet.cms.controller" />
-	<!-- 
-	<dwr:controller id="dwrController" debug="true" />
+	
+	<!-- <dwr:controller id="dwrController" debug="true" />
 	<dwr:annotation-config id="dwrAnnotationConfig" />
 	<dwr:annotation-scan base-package="com.internet.cms.dwr" scanDataTransferObject="true"/>
+	--> 
+	<!-- Definition of View Resolver -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	 	<property name="prefix" value="/WEB-INF/jsp/" />
+	 	<property name="suffix" value=".jsp" />
+	 </bean>
+	 <!-- Request Mapping 
+	 <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	 	<property name="alwaysUseFullPath" value="true"/>
+	 	<property name="mappings">
+	 		<props>
+	 			<prop key="/dwr/**/*">dwrController</prop>
+	 		</props>
+	 	</property>
+	 </bean>-->
+	 
+	 <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	 	<property name="exceptionMappings">
+	 		<props>
+	 			<prop key="com.internet.cms.model.CmsException">error</prop>
+	 		</props>
+	 	</property>
+	 </bean>
+	 <!--  
+	 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="500000000" />
+	 </bean>
 	 -->
 </beans>
