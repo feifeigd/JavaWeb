@@ -36,5 +36,9 @@
 		@Scope("prototype")   设定bean的作用域
 	 -->
 	<context:component-scan base-package="com.internet.cms.controller" />
-
+	<!-- 
+	<dwr:controller id="dwrController" debug="true" />
+	<dwr:annotation-config id="dwrAnnotationConfig" />
+	<dwr:annotation-scan base-package="com.internet.cms.dwr" scanDataTransferObject="true"/>
+	 -->
 </beans>

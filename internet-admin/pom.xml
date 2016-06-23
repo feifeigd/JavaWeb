@@ -40,5 +40,11 @@
              	<groupId>com.alibaba</groupId>
              	<artifactId>druid</artifactId>
          	</dependency>
+         	<!-- https://mvnrepository.com/artifact/org.directwebremoting/dwr -->
+			<dependency>
+			    <groupId>org.directwebremoting</groupId>
+			    <artifactId>dwr</artifactId>
+			    <version>3.0.M1</version>
+			</dependency>
 	</dependencies>
 </project>
