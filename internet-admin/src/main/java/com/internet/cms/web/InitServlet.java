@@ -30,7 +30,7 @@ public class InitServlet extends HttpServlet {
 		ServletContext sc = getServletContext();
 		wc = WebApplicationContextUtils.getWebApplicationContext(sc);
 		// 初始化权限信息
-		Map<String, Set<String> > auths = AuthUtil.initAuth("com.initernet.cms.controller");
+		Map<String, Set<String> > auths = AuthUtil.initAuth("com.internet.cms.controller");	// 搞控制器这个包里面的
 		sc.setAttribute("allAuths", auths);
 		sc.setAttribute("baseInfo", BaseInfoUtil.getInstance().read());
 		System.out.println("--- 系统初始化成功: "+ auths + "---");
