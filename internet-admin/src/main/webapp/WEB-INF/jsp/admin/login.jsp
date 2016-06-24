@@ -12,11 +12,11 @@
 	<div class="main-container">
 		<div class="main-content">
 			<div class="row">
-				<div class="col-sm-10">	
+				<div class="col-sm-10 col-sm-offset-1">	
 					<div class="login-container">
 						<div class="center">
 							<h1>
-								<i class="ace-icon fa fa-lefa green"></i>
+								<i class="ace-icon fa fa-leaf green"></i>
 								<span class="red">d7kj</span>
 								<span class="white" id="id-text2">d7kj</span>
 							</h1>
@@ -76,7 +76,7 @@
 											</fieldset>
 										</form>
 										
-										<div>
+										<div class="social-or-login center">
 											<span class="bigger-110">或者用以下方式登陆</span>
 										</div>
 										
@@ -111,7 +111,7 @@
 								</div><!-- login-box -->
 							</form><!-- myForm -->
 							
-							<div id="forgot-box">
+							<div id="forgot-box" class="forgot-box widget-box no-border">
 								<div class="widget-body">
 									<div class="widget-main">
 										<h4 class="header red lighter bigger">
@@ -141,7 +141,14 @@
 												</div>
 											</fieldset>
 										</form>
-									</div><!-- widget-main -->								
+									</div><!-- widget-main -->	
+									
+									<div class="toolbar center">
+										<a href="#" data-target="#login-box" class="back-to-login-link">
+											Back to login
+											<i class="ace-icon fa fa-arrow-right"></i>
+										</a>
+									</div>							
 								</div><!-- widget-body -->
 							</div><!-- forgot-box -->
 							
@@ -221,7 +228,7 @@
 							</div><!-- signup-box -->
 						</div><!-- position-relative -->
 						
-						<div class="navbar-fixed-top">
+						<div class="navbar-fixed-top align-right">
 							<br/>
 							&nbsp;<a id="btn-login-dark" href="#">Dark</a>&nbsp;<span class="blue">/</span>		
 							&nbsp;<a id="btn-login-blur" href="#">Blur</a>&nbsp;<span class="blue">/</span>		
