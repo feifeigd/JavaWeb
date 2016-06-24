@@ -67,7 +67,7 @@
 			<groupId>org.samba.jcifs</groupId>
 			<artifactId>jcifs</artifactId>
 		</dependency>
-		<!-- 
+		<!--  -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -75,6 +75,12 @@
 			<dependency>
              	<groupId>com.alibaba</groupId>
              	<artifactId>druid</artifactId>
-         	</dependency> -->
+         	</dependency>
+         	<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+		<dependency>
+		    <groupId>javax.inject</groupId>
+		    <artifactId>javax.inject</artifactId>
+		    <version>1</version>
+		</dependency>
 	</dependencies>
 </project>
