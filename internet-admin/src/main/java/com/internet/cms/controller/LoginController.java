@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javax.imageio.ImageIO;
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
@@ -30,6 +31,25 @@ public class LoginController {
 	
 	private IUserService userService;
 	private IRoleService roleService;
+
+	
+	public IUserService getUserService() {
+		return userService;
+	}
+
+	@Inject
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
+	}
+
+	public IRoleService getRoleService() {
+		return roleService;
+	}
+
+	@Inject
+	public void setRoleService(IRoleService roleService) {
+		this.roleService = roleService;
+	}
 
 	/// 请求 /login.do
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
