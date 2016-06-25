@@ -18,8 +18,16 @@ import com.internet.cms.service.IIndexService;
 @RequestMapping("/admin")
 public class BackupController {
 	
+	private IIndexService indexService;	
+	
+	public IIndexService getIndexService() {
+		return indexService;
+	}
+	
 	@Inject
-	private IIndexService indexService;
+	public void setIndexService(IIndexService indexService) {
+		this.indexService = indexService;
+	}
 
 	@RequestMapping(value="/backup/add", method=RequestMethod.GET)
 	public String backup(){
@@ -38,6 +46,7 @@ public class BackupController {
 		BackupFileUtil bfu = BackupFileUtil.getInstance(SystemContext.getRealPath());
 		bfu.resume(name + "." + type);
 		indexService.generateTop();
+		
 		return "redirect:/admin/backups";
 	}
 }

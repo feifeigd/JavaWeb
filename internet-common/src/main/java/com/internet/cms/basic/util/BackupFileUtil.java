@@ -108,4 +108,31 @@ public class BackupFileUtil {
 		}
 	}
 
+	public void backup(String backupFilename) {
+		// TODO Auto-generated method stub
+		String bp = realPath + File.separator + backupFile + File.separator + BACKUP_NAME;
+		try {
+			// 1. 创建备份文件夹对象
+			File bpf = new File(bp);
+			bpf.mkdirs();
+			// 导出数据库
+			MySQLUtil msu = MySQLUtil.getInstance();
+			msu.setCfg(DATABASE_NAME, bp, database, username, password);
+			msu.backup();
+			// 将要备份的文件夹拷贝到目标文件夹中
+			for (String f : backupFiles){
+				String src = realPath + File.separator;
+				String dest = bp + f;
+				FileUtils.copyDirectory(new File(src), new File(dest));
+			}
+			// tar和gz
+			TarAndGzipUtil tagu = TarAndGzipUtil.getInstance();
+			tagu.tarFile(bp, realPath + File.separator + backupFile + File.separator + new Date().getTime() + "_" + backupFilename + ".tar");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}finally{
+			FileUtils.deleteDirectory(new File(bp));
+		}
+	}
+
 }
