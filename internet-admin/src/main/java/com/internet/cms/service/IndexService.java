@@ -6,19 +6,20 @@ import org.springframework.stereotype.Service;
 import com.internet.cms.basic.util.FreemarkerUtil;
 
 
-@Service
+@Service("indexService")
 public class IndexService implements IIndexService {
 
 	private FreemarkerUtil util;
 	private String outPath;
 
-	@Autowired(required = true)
+	/*@Autowired(required = true)
 	public IndexService(String ftlPath, String outPath){
 		if(util == null){
 			this.outPath = outPath;
 			util = FreemarkerUtil.getInstance(ftlPath);
 		}
-	}
+	}*/
+	
 	@Override
 	public void generateTop() {
 		// TODO Auto-generated method stub

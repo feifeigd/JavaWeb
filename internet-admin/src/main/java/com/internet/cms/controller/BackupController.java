@@ -34,11 +34,25 @@ public class BackupController {
 		return "backup/add";
 	}
 	
+	@RequestMapping(value="/backup/add", method=RequestMethod.POST)
+	public String backup(String backupFilename){
+		BackupFileUtil bfu = BackupFileUtil.getInstance(SystemContext.getRealPath());
+		bfu.backup(backupFilename);
+		return "redirect:/admin/backups";
+	}
+	
 	@RequestMapping(value="backups")
 	public String lisg(Model model){
 		BackupFileUtil bfu = BackupFileUtil.getInstance(SystemContext.getRealPath());
 		model.addAttribute("backups", bfu.listBackups());
 		return "backup/list";
+	}
+	
+	@RequestMapping("delete/{name}")
+	public String delete(@PathVariable String name, String type){
+		BackupFileUtil bfu = BackupFileUtil.getInstance(SystemContext.getRealPath());
+		bfu.delete(name + "." + type);
+		return "redirect:/admin/backups";
 	}
 	
 	@RequestMapping("resume/{name}")

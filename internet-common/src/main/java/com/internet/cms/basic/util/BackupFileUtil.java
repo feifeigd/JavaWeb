@@ -109,7 +109,6 @@ public class BackupFileUtil {
 	}
 
 	public void backup(String backupFilename) {
-		// TODO Auto-generated method stub
 		String bp = realPath + File.separator + backupFile + File.separator + BACKUP_NAME;
 		try {
 			// 1. 创建备份文件夹对象
@@ -131,8 +130,18 @@ public class BackupFileUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}finally{
-			FileUtils.deleteDirectory(new File(bp));
+			try {
+				FileUtils.deleteDirectory(new File(bp));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
+	}
+	
+	/// 要删除的文件的名称
+	public void delete(String name){
+		File f = new File(realPath + File.separator + backupFile + File.separator + name);
+		f.delete();
 	}
 
 }

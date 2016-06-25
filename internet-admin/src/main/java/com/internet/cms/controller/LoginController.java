@@ -46,7 +46,7 @@ public class LoginController {
 		return roleService;
 	}
 
-	@Inject
+	//@Inject
 	public void setRoleService(IRoleService roleService) {
 		this.roleService = roleService;
 	}
@@ -55,7 +55,7 @@ public class LoginController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(){
 		System.out.println("LoginController.login");
-		return "admin/login";
+		return "admin/login"; // 输出页面  /jsp/admin/login.jsp
 	}
 	
 	@RequestMapping(value = "/login", method= RequestMethod.POST)

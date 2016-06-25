@@ -1,5 +1,9 @@
 package com.internet.cms.web;
 
+/*import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;*/
 import java.util.Map;
 import java.util.Set;
 
@@ -12,6 +16,7 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import com.internet.cms.auth.AuthUtil;
+//import com.internet.cms.controller.LoginController;
 
 public class InitServlet extends HttpServlet {
 
@@ -24,7 +29,6 @@ public class InitServlet extends HttpServlet {
 
 	@Override
 	public void init(ServletConfig config) throws ServletException {
-		// TODO Auto-generated method stub
 		super.init(config);
 		// 初始化spring的工厂
 		ServletContext sc = getServletContext();
@@ -34,6 +38,16 @@ public class InitServlet extends HttpServlet {
 		sc.setAttribute("allAuths", auths);
 		sc.setAttribute("baseInfo", BaseInfoUtil.getInstance().read());
 		System.out.println("--- 系统初始化成功: "+ auths + "---");
+		
+		/*BeanInfo info;
+		try {
+			info = Introspector.getBeanInfo(LoginController.class);
+	        for (PropertyDescriptor pd : info.getPropertyDescriptors()) {  
+	            System.out.println(pd.getName());  
+	        }  
+		} catch (IntrospectionException e) {
+			e.printStackTrace();
+		}*/  
 	}
 
 	public static WebApplicationContext getWc(){
