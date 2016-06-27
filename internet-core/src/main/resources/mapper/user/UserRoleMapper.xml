@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<!-- 映射到哪个接口 -->
+<mapper namespace="com.internet.cms.dao.user.IUserDao">
+	<!-- Model与数据库字段的映射 -->
+	<resultMap type="com.internet.cms.model.UserRole" id="UserRole">
+		<id column="id" property="id" jdbcType="VARCHAR"/>
+		<id column="r_id" property="roleId" jdbcType="VARCHAR"/>
+		<id column="u_id" property="userId" jdbcType="VARCHAR"/>
+	</resultMap>
+	
+	<select id="listUserRoles" resultMap="UserRole" parameterType="int">
+		select ur.r_id from t_user_role as ur where ur.u_id = #{id};
+	</select>
+</mapper>

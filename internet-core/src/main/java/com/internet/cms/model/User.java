@@ -25,8 +25,13 @@ public class User {
 	
 	private Date createDate;
 	
+	/// mybatis 需要默认构造函数
+	public  User(){
+		super();
+	}
+	
 	public User(int id, String username, String password, String nickname, String email, String phone, int status){
-		//super();
+		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;

@@ -12,6 +12,8 @@ public class Role {
 	/// 角色的编号，枚举
 	private RoleType roleType;
 
+	public Role(){}
+	
 	public Role(int id, String name, RoleType roleType){
 		this.id = id;
 		this.name = name;

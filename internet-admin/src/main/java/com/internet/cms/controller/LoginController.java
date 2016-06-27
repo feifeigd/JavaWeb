@@ -29,27 +29,11 @@ import com.internet.cms.web.CmsSessionContext;
 @Controller
 public class LoginController {
 	
-	private IUserService userService;
-	private IRoleService roleService;
-
-	
-	public IUserService getUserService() {
-		return userService;
-	}
-
 	@Inject
-	public void setUserService(IUserService userService) {
-		this.userService = userService;
-	}
-
-	public IRoleService getRoleService() {
-		return roleService;
-	}
-
-	//@Inject
-	public void setRoleService(IRoleService roleService) {
-		this.roleService = roleService;
-	}
+	private IUserService userService;
+	
+	@Inject
+	private IRoleService roleService;
 
 	/// 请求 /login.do
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
