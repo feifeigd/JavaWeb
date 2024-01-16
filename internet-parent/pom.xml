@@ -17,7 +17,7 @@
 	<!-- 公共信息配置 -->
 	<properties>
 		<project.build.sourceEncodeing>UTF-8</project.build.sourceEncodeing>
-		<spring.version>5.2.20.RELEASE</spring.version>
+		<spring.version>5.2.24.RELEASE</spring.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
